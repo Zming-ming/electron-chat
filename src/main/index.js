@@ -21,9 +21,12 @@ function createWindow() {
    * Initial window options
    */
   mainWindow = new BrowserWindow({
-    height: 563,
+    height: 400,
+    width: 290,
     useContentSize: true,
-    width: 1000,
+    frame: false, //添加后自定义标题//自定义边框
+    resizable: false, //可否缩放
+    // movable: false, //可否移动
     webPreferences: {
       nodeIntegration: true,
     },
