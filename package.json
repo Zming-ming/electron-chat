@@ -1,6 +1,6 @@
 {
   "name": "electron-vue",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "mingming <1114750313@qq.com>",
   "description": "An electron-vue project",
   "license": "ISC",
@@ -53,6 +53,8 @@
   "dependencies": {
     "axios": "^0.19.2",
     "core-js": "^3",
+    "less": "^3.12.2",
+    "less-loader": "^6.2.0",
     "view-design": "^4.3.2",
     "vue": "^2.6.11",
     "vue-electron": "^1.0.6",

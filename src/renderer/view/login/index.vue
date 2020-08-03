@@ -1,73 +1,31 @@
 <template>
-  <div>
-    <div class="title">Information</div>
-    <div class="items">
-      <div class="item">
-        <div class="name">Path:</div>
-        <div class="value">{{ path }}</div>
-      </div>
-      <div class="item">
-        <div class="name">Route Name:</div>
-        <div class="value">{{ name }}</div>
-      </div>
-      <div class="item">
-        <div class="name">Vue.js:</div>
-        <div class="value">{{ vue }}</div>
-      </div>
-      <div class="item">
-        <div class="name">Electron:</div>
-        <div class="value">{{ electron }}</div>
-      </div>
-      <div class="item">
-        <div class="name">Node:</div>
-        <div class="value">{{ node }}</div>
-      </div>
-      <div class="item">
-        <div class="name">Platform:</div>
-        <div class="value">{{ platform }}</div>
-      </div>
+    <div class="login"> 
+        <div class="frame">
+            <Icon style="float:right;margin-right:15px;line-height:30px;" size="18" type="md-close" @click="closeWindow"/>
+        </div>
+        <div class="form">
+            <form>
+                <Input prefix="md-mail"  type="email" placeholder="Enter email..." style="width:100%;" />
+                <Input prefix="md-lock" type="password" password placeholder="Enter something..." style="width:100%;margin-top:20px;" />
+                <div style="margin-top:10px;font-size:12px;">
+                    <Checkbox v-model="single" style="color:#FFF;">记住密码</Checkbox>
+                    <span style="float:right;color:#2d8cf0;font-weight:900;">忘记密码？</span>
+                    <span style="width:100%;margin-top:10px;float:right;text-align:center;color:#FFF;">还没有账号，去<span style="color:#2d8cf0;font-weight:900;" @click="toRegister"> 注册</span></span>
+                </div>
+                <Button type="default" ghost style="width:40%;margin-left:30%;margin-top:50px;" @click="handleSubmit">登录</Button>
+            </form>
+        </div>
+        <div class="version">
+            mingming@v{{ version }}
+        </div>
     </div>
-  </div>
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        electron: process.versions.electron,
-        name: this.$route.name,
-        node: process.versions.node,
-        path: this.$route.path,
-        platform: require('os').platform(),
-        vue: require('vue/package.json').version
-      }
-    }
-  }
+import index from './index.js';
+export default {
+	...index
+};
 </script>
 
-<style scoped>
-  .title {
-    color: #888;
-    font-size: 18px;
-    font-weight: initial;
-    letter-spacing: .25px;
-    margin-top: 10px;
-  }
-
-  .items { margin-top: 8px; }
-
-  .item {
-    display: flex;
-    margin-bottom: 6px;
-  }
-
-  .item .name {
-    color: #6a6a6a;
-    margin-right: 6px;
-  }
-
-  .item .value {
-    color: #35495e;
-    font-weight: bold;
-  }
-</style>
+<style scoped src="./index.less"></style>

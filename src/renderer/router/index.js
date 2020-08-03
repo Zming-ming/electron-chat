@@ -5,11 +5,6 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'landing-page',
-    //   component: require('@/components/LandingPage').default
-    // },
     {
       path: '*',
       redirect: '/'
@@ -17,7 +12,17 @@ export default new Router({
     {
       path: '/',
       name: 'login',
-      component: require('@/view/login/index').default
+      component: require('@/view/login/index.vue').default
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: require('@/view/register/index.vue').default
+    },
+    {
+      path: '/index',
+      name: 'index',
+      component: require('@/view/index/index.vue').default
     },
   ]
 })
