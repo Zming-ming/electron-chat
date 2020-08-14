@@ -52,8 +52,12 @@ app.on('activate', () => {
   }
 })
 
-ipcMain.on('changWindowSize',()=>{
+ipcMain.on('changWindowSizeIndex',()=>{
   mainWindow.setSize(680,480)
+})
+
+ipcMain.on('changWindowSizeLogin',()=>{
+  mainWindow.setSize(280,400)
 })
 
 ipcMain.on('min',()=>{

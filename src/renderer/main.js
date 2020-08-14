@@ -8,11 +8,16 @@ import store from './store'
 import ViewUI from 'view-design';
 import 'view-design/dist/styles/iview.css';
 
+// WebSocket封装方法
+// import * as socketApi from './api/socket';
+
+
 Vue.use(ViewUI);
 
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 Vue.http = Vue.prototype.$http = axios
 Vue.config.productionTip = false
+// Vue.prototype.socketApi = socketApi;
 
 /* eslint-disable no-new */
 new Vue({
